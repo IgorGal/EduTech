@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduTech – Kursy</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">EduTech</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="kursy.html">Kursy</a></li>
+                <li><a href="about.html">O nas</a></li>
+                <li><a href="kontakt.html">Kontakt</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="forms">
+            <div class="forms-text">
+                <h1 style="font-size: 36px; color: #0d6efd; margin-bottom: 40px;">Zapisz się </h1>
+            </div>
+            <div class="karta">
+                <form action="thanks.html" method="get">
+                    <p>Imię</p>
+                    <input type="text" placeholder="Jan" required>
+                    <p>Nazwisko</p>
+                    <input type="text" placeholder="Nowak" required>
+                    <p>Numer telefonu</p>
+                    <input type="tel" placeholder="+48 123 456 789" required>
+                    <p>Email</p>
+                    <input type="email" placeholder="edu.tech@gmail.com" required>
+                <div class="radio">
+                    
+                    <div class="dot">
+                        <p>Uczeń</p>
+                        <input type="radio" name="id">
+                    </div>
+                    <div class="dot">
+                        <p>Nauczyciel</p>
+                        <input type="radio" name="id">
+                    </div>
+                    <div class="dot">
+                        <p>Inne</p>
+                        <input type="radio" name="id">
+                    </div>
+                </div>
+                <div class="payment">
+                    <p>Metoda płatności</p>
+                    <select name="payment" id="payment" required>
+                        <option value="visa">Visa</option>
+                        <option value="mastercard">Mastercard</option>
+                        <option value="24">Przelewy24</option>
+                    </select>
+                </div>
+                <br>
+                <div class="submit">
+                    <input type="submit" class="btn">
+                </div>
+                </form>
+            </div>
+    </div>
+    </main>
+    <div class="note">
+        <p>*Po kliknięciu "Prześlij" nastąpi przekierowanie do strony z płatnością.</p>
+    </div>
+    <footer>
+        <p>© 2025 EduTech | Wszystkie prawa zastrzeżone</p>
+    </footer>
+</body>
+</html>

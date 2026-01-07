@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduTech – Kursy</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">EduTech</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="kursy.html">Kursy</a></li>
+                <li><a href="about.html">O nas</a></li>
+                <li><a href="kontakt.html">Kontakt</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="kursy-all">
+    <h1 style="font-size: 36px; color: #0d6efd; margin-bottom: 40px;">Nasze kursy</h1>
+
+    <div class="kurs-detail" data-kurs="html">
+        <img src="html.png" alt="Kurs HTML">
+        <div class="kurs-text">
+            <div class="kurs-box">
+                <h2>Podstawy HTML</h2>
+                <p>Naucz się struktury stron internetowych. Poznasz tagi, semantykę HTML5, formularze i najlepsze praktyki tworzenia dostępnego kodu.</p>
+                <button class="btn-more">Więcej informacji</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="kurs-detail" data-kurs="css">
+        <img src="css.png" alt="Kurs CSS">
+        <div class="kurs-text">
+            <div class="kurs-box">
+                <h2>CSS i stylizacja</h2>
+                <p>Opanuj Flexbox, Grid, animacje, responsywność i nowoczesne techniki stylizacji. Naucz się tworzyć piękne i funkcjonalne interfejsy.</p>
+                <button class="btn-more">Więcej informacji</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="kurs-detail" data-kurs="js">
+        <img src="js.png" alt="Kurs JavaScript">
+        <div class="kurs-text">
+            <div class="kurs-box">
+                <h2>JavaScript</h2>
+                <p>Poznaj język programowania stron internetowych. Od podstaw po zaawansowane tematy: DOM, asynchroniczność, ES6+, API i frameworki.</p>
+                <button class="btn-more">Więcej informacji</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="kurs-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="modal-title">Tytuł kursu</h2>
+            <div class="modal-info">
+                <p><strong>Ilość lekcji:</strong> <span id="modal-lekcje"></span></p>
+                <p><strong>Ilość godzin:</strong> <span id="modal-godziny"></span></p>
+                <p><strong>Cena:</strong> <span id="modal-cena"></span></p>
+            </div>
+            <a href="form.html"><button class="btn-zapisz">Zapisz się na kurs</button></a>
+        </div>
+    </div>
+</main>
+
+    <footer>
+        <p>© 2025 EduTech | Wszystkie prawa zastrzeżone</p>
+    </footer>
+    <script>
+    const modal = document.getElementById('kurs-modal');
+    const closeBtn = document.querySelector('.close');
+    const title = document.getElementById('modal-title');
+    const lekcje = document.getElementById('modal-lekcje');
+    const godziny = document.getElementById('modal-godziny');
+    const cena = document.getElementById('modal-cena');
+
+    const kursyData = {
+        html: {
+            title: "Podstawy HTML",
+            lekcje: "24 lekcje",
+            godziny: "18 godzin",
+            cena: "399 zł"
+        },
+        css: {
+            title: "CSS i stylizacja",
+            lekcje: "32 lekcje",
+            godziny: "28 godzin",
+            cena: "499 zł"
+        },
+        js: {
+            title: "JavaScript",
+            lekcje: "48 lekcji",
+            godziny: "42 godziny",
+            cena: "799 zł"
+        }
+    };
+
+    document.querySelectorAll('.btn-more').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const kursId = btn.closest('.kurs-detail').dataset.kurs;
+            const data = kursyData[kursId];
+
+            title.textContent = data.title;
+            lekcje.textContent = data.lekcje;
+            godziny.textContent = data.godziny;
+            cena.textContent = data.cena;
+
+            modal.style.display = 'flex';
+        });
+    });
+
+    closeBtn.addEventListener('click', () => {
+        modal.style.display = 'none';
+    });
+
+    window.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            modal.style.display = 'none';
+        }
+    });
+</script>
+</body>
+</html>
